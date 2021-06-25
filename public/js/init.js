@@ -99,6 +99,7 @@ async function set_daily_calender() {
                 tempDate = `${yy}-${mm}-${dd - 1}`
         }
 
+        console.log(allEvents[day][i]["start_date"].split("T")[0] == tempDate,allEvents[day][i]["start_date"].split("T")[0] , tempDate)
         if (allEvents[day][i]["start_date"].split("T")[0] == tempDate) {
             let data = await axios.post("https://pepcalender.herokuapp.com/faculty/getid", { mail: allEvents[day][i].Faculty_id })
             let { Name, Color } = data.data.data[0];
