@@ -1,5 +1,5 @@
 let set_faculty_list = async () => {
-    let allFaculty = await axios.get("http://localhost:4000/faculty/get/all");
+    let allFaculty = await axios.get("https://pepcalender.herokuapp.com/faculty/get/all");
     allFaculty = allFaculty.data.data;
     set_faculty_in_mail_and_event(allFaculty);
     let wrapper = document.createElement("div");
@@ -71,7 +71,7 @@ let set_faculty_in_mail_and_event = async (faculties) => {
 set_faculty_list();
 
 async function getAllEvents() {
-    let data = await axios.post("http://localhost:4000/event/get");
+    let data = await axios.post("https://pepcalender.herokuapp.com/event/get");
     allEvents = data.data.data
     set_daily_calender();
     set_weekly_calender()
@@ -100,7 +100,7 @@ async function set_daily_calender() {
         }
 
         if (allEvents[day][i]["start_date"].split("T")[0] == tempDate) {
-            let data = await axios.post("http://localhost:4000/faculty/getid", { mail: allEvents[day][i].Faculty_id })
+            let data = await axios.post("https://pepcalender.herokuapp.com/faculty/getid", { mail: allEvents[day][i].Faculty_id })
             let { Name, Color } = data.data.data[0];
             if (!Color) Color = "blue";
             let st = allEvents[day][i]["st-time"];
@@ -145,7 +145,7 @@ async function set_monthly_calender() {
             checkDate = checkDate[0] + "-" + checkDate[1];
             let addOn = new Date(yy, mm - 1, "01").getDay() - 1;
             if (checkDate == tempDate) {
-                let data = await axios.post("http://localhost:4000/faculty/getid", { mail: allEvents[j][i].Faculty_id })
+                let data = await axios.post("https://pepcalender.herokuapp.com/faculty/getid", { mail: allEvents[j][i].Faculty_id })
                 if (!data.data.data[0]) continue;
                 let { Color } = data.data.data[0];
                 if (!Color) Color = "blue";
@@ -184,7 +184,7 @@ async function set_weekly_calender() {
 
             let checkDate = allEvents[j][i]["start_date"].split("T")[0]
             if (date_Arr.includes(checkDate)) {
-                let data = await axios.post("http://localhost:4000/faculty/getid", { mail: allEvents[j][i].Faculty_id })
+                let data = await axios.post("https://pepcalender.herokuapp.com/faculty/getid", { mail: allEvents[j][i].Faculty_id })
                 if (!data.data.data[0]) continue;
                 let { Color } = data.data.data[0];
                 if (!Color) Color = "blue";

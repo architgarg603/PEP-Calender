@@ -82,7 +82,7 @@ add_event_submit.addEventListener("click", async function () {
                     tempDate = `${yy}-${mm}-${dd}`
             }
             if (selected_Days.includes(daylist[(st_day + i) % 7])) {
-                let data = await axios.post("http://localhost:4000/event/add", {
+                let data = await axios.post("https://pepcalender.herokuapp.com/event/add", {
                     Faculty_id,
                     title,
                     "st_date": tempDate,

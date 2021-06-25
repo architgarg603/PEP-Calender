@@ -22,7 +22,7 @@ add_faculty_submit.addEventListener("click",async function(){
     let color = add_faculty_color.value
 console.log(name,email,ph);
     if (name && email && ph) {
-        let data = await axios.post("http://localhost:4000/faculty/add", { "name": name, "email": email, "phone": ph, "color":color });
+        let data = await axios.post("https://pepcalender.herokuapp.com/faculty/add", { "name": name, "email": email, "phone": ph, "color":color });
         console.log(data.data);
         add_faculty_popup.style.display = "none";
         add_faculty_msg.innerHTML = "";

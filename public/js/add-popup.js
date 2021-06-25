@@ -14,7 +14,7 @@ remove_faculty_submit.addEventListener("click",async function(){
     try{
 
         let mail = remove_faculty_submit.getAttribute("email");
-        let data = await axios.post("http://localhost:4000/faculty/remove",{email:mail});
+        let data = await axios.post("https://pepcalender.herokuapp.com/faculty/remove",{email:mail});
         remove_faculty_popup.style.display = "none" ;
         set_faculty_list();
     }catch{
