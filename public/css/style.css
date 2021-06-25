@@ -333,9 +333,7 @@ body::-webkit-scrollbar-thumb {
     height: 20px;
     width: 20px;
 }
-.faculty:hover .del-faculty{
-    display: flex;
-}
+
 .del-faculty{
     position: absolute;
     height: 100%;
