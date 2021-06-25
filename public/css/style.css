@@ -471,7 +471,7 @@ body::-webkit-scrollbar-thumb {
 
 .yearly-calender-part{
     width: calc( 100% / 4.5 );
-    margin: 0px 35px 35px 0px;
+    margin: 0px 30px 10px 0px
 }
 
 .yearly-calender-head{
