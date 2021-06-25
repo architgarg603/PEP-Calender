@@ -8,6 +8,7 @@
 - View events in day, weekly, monthly or yearly format.
 - Send mail to any faculty.
 - Remind today's schedule by sending mail to all of them by one click.
+- Handle overlaping schedule 
 
 <img src="https://user-images.githubusercontent.com/57831888/123454457-37d44600-d5fe-11eb-91b3-44e10da122dc.JPG" width="600px">
 

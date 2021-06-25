@@ -21,10 +21,7 @@ let set_faculty_list = async () => {
         let delBtn = document.createElement("div");
         delBtn.classList.add("del-faculty")
         delBtn.innerHTML = '<i class="fas fa-times"></i>';
-        delBtn.addEventListener("click", function () {
-            remove_faculty_popup.style.display = "block";
-            remove_faculty_popup.querySelector(".remove-faculty-submit").setAttribute("email", allFaculty[i].Email);
-        })
+        
 
         faculty.appendChild(checkbox);
         faculty.appendChild(name);
