@@ -555,7 +555,7 @@ body::-webkit-scrollbar-thumb {
     position: fixed;
     width: 30vw;
     background-color: white;
-    z-index: 5;
+    z-index: 50;
     box-shadow: 0px 0px 20px grey;
     left: 40vw;
     padding: 20px;
@@ -568,6 +568,7 @@ body::-webkit-scrollbar-thumb {
     justify-content: flex-end;
     font-size: x-large;
     cursor: pointer;
+    
 }
 .add-event-popup .heading{
     display: flex;
@@ -714,7 +715,7 @@ body::-webkit-scrollbar-thumb {
     top: 15vh;
     left: 25vw;
     background-color: white;
-    z-index: 5;
+    z-index: 50;
     position: absolute;
     border-radius: 5px;
     overflow: hidden;
@@ -823,7 +824,7 @@ body::-webkit-scrollbar-thumb {
     border-radius: 10px;
     padding: 20px;
     background-color: white;
-    z-index: 2;
+    z-index: 50;
     display: none;
 }
 .add-faculty-close{
