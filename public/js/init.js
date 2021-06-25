@@ -81,6 +81,7 @@ async function getAllEvents() {
 async function set_daily_calender() {
     let prevDiv = document.querySelectorAll(".daily-schedule-view-part-wrapper");
     for (let i = 0; i < prevDiv.length; i++)prevDiv[i].remove();
+    let cnt = 0;
     for (let i = 0; i < allEvents[day].length; i++) {
         let tempDate = "";
         let dd = date;
@@ -110,13 +111,13 @@ async function set_daily_calender() {
             let x = parseInt(st / 100);
             wrapper.style.maxWidth = (((ed / 100) - st) * 80) + "px"
             wrapper.style.left = (80 * (x - 1)) + "px";
-            wrapper.style.top = ((130 * i) + (45)) + "px"
+            wrapper.style.top = ((130 * cnt) + (45)) + "px"
             wrapper.style.backgroundColor = Color
             wrapper.setAttribute("mail", allEvents[day][i].Faculty_id)
             wrapper.innerHTML = `<div class="daily-schedule-view-part-title"  > ${allEvents[day][i].title} </div>   
                             <div class="daily-schedule-view-part-timing">${st}-${ed}</div>
                             <div class="daily-schedule-view-part-name">${Name}</div>`
-
+            cnt++;
             daily_div.appendChild(wrapper)
         }
     }
