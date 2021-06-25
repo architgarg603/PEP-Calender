@@ -99,7 +99,6 @@ async function set_daily_calender() {
                 tempDate = `${yy}-${mm}-${dd}`
         }
 
-        console.log(allEvents[day][i]["start_date"].split("T")[0] == tempDate,allEvents[day][i]["start_date"].split("T")[0] , tempDate)
         if (allEvents[day][i]["start_date"].split("T")[0] == tempDate) {
             let data = await axios.post("https://pepcalender.herokuapp.com/faculty/getid", { mail: allEvents[day][i].Faculty_id })
             let { Name, Color } = data.data.data[0];
@@ -119,7 +118,6 @@ async function set_daily_calender() {
                             <div class="daily-schedule-view-part-name">${Name}</div>`
 
             daily_div.appendChild(wrapper)
-            console.log(wrapper);
         }
     }
 
@@ -198,7 +196,7 @@ async function set_weekly_calender() {
                 st = Number(st);
                 ed = Number(ed)
                 let x = parseInt(st / 100);
-                wrapper.style.top = (cnt*12+(j*96))+"px"
+                wrapper.style.top = (cnt*12+(j*84))+"px"
                 wrapper.style.left = (80 * (x - 1)) + "px";
                 wrapper.innerHTML = ` <div class="monthly-schedule-wrapper-color" style="background-color:${Color} ;" ></div>
                 <div class="monthly-schedule-wrapper-title">${allEvents[j][i].title}</div>`
@@ -206,7 +204,6 @@ async function set_weekly_calender() {
                 cnt++;
             }
         }
-        console.log("============================")
     }
 
 }

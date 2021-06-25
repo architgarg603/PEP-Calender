@@ -14,7 +14,7 @@ function showSelectedEvent(div) {
         for (let i = 0; i < allMonthly.length; i++) {
             let attr = allMonthly[i].getAttribute("mail");
             if (mail == attr) {
-                allMonthly[i].style.display = "block"
+                allMonthly[i].style.display = "flex"
             }
         }
         for (let i = 0; i < allWeekly.length; i++) {
