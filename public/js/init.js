@@ -88,15 +88,15 @@ async function set_daily_calender() {
         let yy = yr;
         if (mm <= 9) {
             if (dd <= 9)
-                tempDate = `${yy}-0${mm}-0${dd - 1}`
+                tempDate = `${yy}-0${mm}-0${dd}`
             else
-                tempDate = `${yy}-0${mm}-${dd - 1}`
+                tempDate = `${yy}-0${mm}-${dd}`
         }
         else {
             if (dd <= 9)
-                tempDate = `${yy}-${mm}-0${dd - 1}`
+                tempDate = `${yy}-${mm}-0${dd}`
             else
-                tempDate = `${yy}-${mm}-${dd - 1}`
+                tempDate = `${yy}-${mm}-${dd}`
         }
 
         console.log(allEvents[day][i]["start_date"].split("T")[0] == tempDate,allEvents[day][i]["start_date"].split("T")[0] , tempDate)
