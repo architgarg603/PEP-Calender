@@ -29,10 +29,3 @@ right_div.addEventListener("scroll",function(){
     }
 })
 
-three_dots.addEventListener("click",function(){
-    if(three_dots_options_div.classList.contains("show-more")){
-        three_dots_options_div.classList.remove("show-more")
-    }else{
-        three_dots_options_div.classList.add("show-more")
-    }
-})

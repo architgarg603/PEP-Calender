@@ -11,7 +11,7 @@ body{
 
 .header{
     height: 80px;
-    width: 100%;
+    width: 1534.6px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,7 +23,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 15%;
+    width: 17%;
     font-size: 22px;
     font-weight: bold;
     color: rgb(69, 67, 67);
@@ -38,7 +38,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 15%;
+    width: 22%;
 }
 .header-more-options{
     display: flex;
@@ -90,6 +90,7 @@ body{
     transition: 0.5s;
     cursor: pointer;
 }
+
 .shifter i:hover{
     transform: scale(1.2);
 }
@@ -119,8 +120,9 @@ body{
 }
 
 .left{
-    width: 20%;
-    height: 100%;
+    min-width: 341px;
+    max-width: 341px;
+    height: 721.3px;
     padding: 0px 30px 20px 30px;
     overflow: auto;
 }
@@ -133,7 +135,22 @@ body{
     border-radius: 10px;
     
     
+
+
 }
+
+body::-webkit-scrollbar {
+    height: 0.11px;  /* Remove scrollbar space */
+    width: 0.1px;
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+body::-webkit-scrollbar-thumb {
+    background: black;
+    height: 1px;
+}
+
+
 
 .left::-webkit-scrollbar-thumb {
     border-radius: 10px;
@@ -310,15 +327,16 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 3px solid blue;
-    background-color: blue;
-    color: white;
     border-radius: 5px;
 }
-.faculty:hover .del-faculty i{
+.checkbox input{
+    height: 20px;
+    width: 20px;
+}
+.faculty:hover .del-faculty{
     display: flex;
 }
-.del-faculty i{
+.del-faculty{
     position: absolute;
     height: 100%;
     display: none;
@@ -331,8 +349,9 @@ body{
     cursor: pointer;
 }
 .right{
-    width: 80%;
-    height: 100%;
+    min-width: 1195.33px;
+    max-width: 1195.33px;
+    height: 721.8px;
     overflow: auto;
     position: relative;
     border-color: gainsboro !important;
@@ -340,8 +359,10 @@ body{
 
 .daily-calender,.weekly-calender,.monthly-calender,.yearly-calender{
     width: 100%;
-    height: 100%;
+    height: 100% ;
     display: none;
+    position: relative;
+    
 }
 
 .daily-timer,.daily-schedule-wrapper,.weekly-timer,.weekly-schedule-wrapper,.monthly-days{
@@ -369,6 +390,7 @@ body{
 }
 .right::-webkit-scrollbar {
     height: 8px;
+    width: 8px;
 }
  
 .right::-webkit-scrollbar-track {
@@ -390,7 +412,7 @@ body{
 
 .weekly-calender-wrapper{
     height: 100%;
-    width: 100%;
+    width: fit-content;
 }
 
 .weekly-days{
@@ -400,6 +422,7 @@ body{
     position: sticky;
     left: 0px;
     top: 0px;
+    z-index: 10;
     background-color: white;
     border-right:1px solid gainsboro;
     border-bottom:1px solid gainsboro;
@@ -426,7 +449,7 @@ body{
 .monthly-dates{
     width: 100%;
     height: calc( 100% - 40px );
-    overflow: hidden;
+    /* overflow: hidden; */
     display: flex;
     flex-wrap: wrap;
 }
@@ -493,8 +516,13 @@ body{
     background-color: gainsboro;
 }
 
-.active-year-date{
-    background-color: rgba(200, 227, 250, 0.614) !important;
+.active-year-date,.active-nav-date{
+    background-color: rgba(167, 208, 243, 0.614) !important;
+}
+
+.active-nav-today-date{
+    background-color: rgba(144, 198, 247, 0.814) !important;
+
 }
 
 .daily-calender{
@@ -502,8 +530,8 @@ body{
 }
 
 .add-event{
-    width: 80px;
-    height: 80px;
+    width:70px;
+    height: 70px;
     border-radius: 50%;
     box-shadow: 0px 0px 10px gray;
     display: flex;
@@ -512,20 +540,24 @@ body{
     font-size: xx-large;
     color: rgb(113, 112, 112);
     position: absolute;
-    bottom: 30px;
-    right: 30px;
+    bottom: 20px;
+    right: 20px;
     z-index: 2;
     background-color: white;
     color: cornflowerblue;
+    cursor: pointer;
+}
+.add-event i{
+    cursor: pointer;
 }
 
 .add-event-popup{
-    position: absolute;
+    position: fixed;
     width: 30vw;
     background-color: white;
     z-index: 5;
     box-shadow: 0px 0px 20px grey;
-    left: 25vw;
+    left: 40vw;
     padding: 20px;
     top: 10vh;
     border-radius: 20px;
@@ -551,6 +583,7 @@ body{
     align-items: flex-end;
     padding-right: 10%;
     margin-bottom: 20px;
+
 }
 #add-title{
     width: 90%;
@@ -593,7 +626,7 @@ body{
     height: 100px;
 }
 
-.add-faculty-submit{
+.add-event-submit{
     width: 150px;
     height: 40px;
     border-radius: 20px;
@@ -601,14 +634,14 @@ body{
     justify-content: center;
     align-items: center;
     margin: auto;
-    margin-top: 30px;
+    margin-top: 10px;
     font-weight: bold;
     position: relative;
     cursor: pointer;
     font-size: x-large;
 }
 
-.add-faculty-submit::after{
+.add-event-submit::after{
     content: '';
     background-color: rgb(198, 222, 245);
     width: 0%;
@@ -619,7 +652,7 @@ body{
     transition: 0.5s;
 
 }
-.add-faculty-submit:hover::after{
+.add-event-submit:hover::after{
     width: 100%;
 }
 .remove-faculty-confirm,.reminder-faculty-confirm{
@@ -761,5 +794,179 @@ body{
 .send-mail-close i{
     cursor: pointer;
 }
+.add-faculty-msg,.add-event-msg{
+    font-weight: bold;
+    color: red;
+    margin-bottom: 10px;
+    height: 20px;
+}
+.add-faculty-color{
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+#add-faculty-color{
+    background-color: transparent;
+    border: none;
+    height: 30px;
+    outline: none;
+    width:50px;
+    margin-left: 20px;
+}
+.add-faculty-popup{
+    width: 30vw;
+    height: 55vh;
+    position: absolute;
+    top:15vh;
+    left: 25vw;
+    box-shadow: 0px 0px 10px grey;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: white;
+    z-index: 2;
+    display: none;
+}
+.add-faculty-close{
+    display: flex;
+    justify-content: flex-end;
+    height: 30px;
 
+}
+.add-faculty-close i{
+    font-size: x-large;
+    cursor: pointer;
+}
+
+.add-faculty-head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    border-bottom: 5px solid rgb(198, 222, 245);
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.add-faculty-name,.add-faculty-email,.add-faculty-mobile{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+#add-faculty-name,#add-faculty-email,#add-faculty-mobile{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid grey;
+    font-size: large;
+    color: gray;
+}
+
+.add-faculty-submit span{
+    height: 40px;
+    width: 120px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+
+.add-faculty-submit::after{
+    content: '';
+    background-color: rgb(198, 222, 245);
+    width: 0%;
+    height: 5px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    transition: 0.5s;
+
+}
+.add-faculty-submit:hover::after{
+    width: 100%;
+}
+.add-event-days{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+    margin-bottom: 15px;
+    font-size: large;
+}
+.add-event-days input{
+    height: 15px;
+    width: 15px;
+}
+.yearly-calender-date::after{
+    background-color: rgba(128, 128, 128, 0.194);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    content: '';
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+}
+
+.yearly-calender-date:hover::after{
+    opacity: 1;
+}
+
+.daily-schedule-view-part-wrapper{
+    background-color: blue;
+    border-radius: 15px;
+    width: fit-content;
+    padding: 15px;
+    color: white;
+    position: absolute;
+    z-index: 5;
+    top: 45px;
+    /* overflow: hidden; */
+    height: 120px;
+    opacity: 0.6;
+}
+
+.daily-schedule-view-part-title{
+    font-size: large;
+    font-weight: bold;
+}
+.daily-schedule-view-part-timing{
+    font-size: medium;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.daily-schedule-view-part-name{
+    text-align: end;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.monthly-schedule-wrapper-color{
+    width: 15px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: blue;
+    position: relative;
+    z-index: 5;
+    
+}
+.weekly-schedule-wrapper-event{
+    border-radius: 5px;
+    position: absolute;
+    z-index: 5;   
+    display: flex;
+    align-items: center;
+}
+.weekly-schedule-wrapper{
+    position: relative;
+}
+.monthly-schedule-wrapper{
+    display: flex;
+    align-items: center;
+}
+.monthly-schedule-wrapper-title{
+    font-size: medium;
+}
 
