@@ -118,6 +118,7 @@ async function set_daily_calender() {
                             <div class="daily-schedule-view-part-name">${Name}</div>`
 
             daily_div.appendChild(wrapper)
+            console.log(wrapper);
         }
     }
 
