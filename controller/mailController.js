@@ -57,11 +57,9 @@ async function remind(req, res) {
         if (date <= 9) final_date = yr + "-" + (month) + "-0" + date;
         if (date <= 9 && month <= 9) final_date = yr + "-0" + (month) + "-0" + date;
         let day = daylist[today.getDay()].toLowerCase();
-        console.log(final_date, day);
         let appoitments = await remiderHelper(final_date, day);
         for (let i = 0; i < appoitments.length; i++) {
             let results = JSON.parse(JSON.stringify(appoitments[i]));
-            console.log(results.Faculty_id)
             let email = results.Faculty_id;
             let subject = "Todays Schedule";
             let start_time = results["st-time"];

@@ -25,7 +25,6 @@ async function createFaculty(req, res) {
         let uid = uuidv4();
         let newUser = req.body;
         newUser.uid = uid;
-        console.log(newUser);
         let data = await createFacultyHelper(newUser);
         res.json({
             message: "Faculty added succesfully",
@@ -66,7 +65,7 @@ async function DeleteFaculty(req, res) {
     }
 };
 
-function getAllFacultyHelper(email) {
+function getAllFacultyHelper() {
     return new Promise((resolve, reject) => {
         let sql = `SELECT * FROM \`Faculty-Details\``;
         connection.query(sql, function (error, data) {
@@ -92,18 +91,7 @@ async function getAllFaculty(req, res) {
         });
     }
 };
-function getAllFacultyHelper(email) {
-    return new Promise((resolve, reject) => {
-        let sql = `SELECT * FROM \`Faculty-Details\``;
-        connection.query(sql, function (error, data) {
-            if (error) {
-                reject(error);
-            } else {
-                resolve(data);
-            }
-        });
-    });
-}
+
 
 function getFacultyByIsHelper(email) {
     return new Promise((resolve, reject) => {

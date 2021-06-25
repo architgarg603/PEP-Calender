@@ -144,9 +144,6 @@ async function createEvent(req, res) {
         // ===============================================================
 
         let check =await addEventValidator({"st_date":event.st_date,"ed_date":event.ed_date,"st_time":event.st_time,"ed_time":event.ed_time,"day":event.day,"mail": event.Faculty_id})
-console.log('***********************************************************');
-console.log(check);
-console.log('***********************************************************');
         if(!check){
             res.json({
                 message: "event creations failed !!",
