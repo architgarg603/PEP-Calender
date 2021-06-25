@@ -2,8 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path")
 const faculty_Router = require("./router/facultyRouter");
-const mailRouter = require("./router/mailROuter");
-const eventRouter = require("./router/eventROuter");
+const mailRouter = require("./router/mailRouter");
+const eventRouter = require("./router/eventRouter");
 const { getView } = require("./controller/viewController");
 
 const app = express();
